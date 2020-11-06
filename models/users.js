@@ -2,19 +2,20 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Define User Schema
+
 var users = new Schema({
     username: {
         type: String,
         require: true
     },
-    // email: {
-    //     type: String,
-    //     unique: true,
-    //     require: true,
-    //     lowercase: true
-    // },
-    // firstname: String,
-    // lastname: String,
+    email: {
+        type: String,
+        unique: true,
+        require: true,
+        lowercase: true
+    },
+    firstName: String,
+    lastName: String,
     password: {
         type: String,
         require: true
@@ -23,5 +24,7 @@ var users = new Schema({
     //     type: String
     // }
 });
+
+
 
 module.exports = mongoose.model('Users', users);

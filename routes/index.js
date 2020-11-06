@@ -16,20 +16,20 @@ router.get('/classes', (req, res, next) => {
 
 router.get('/login', (req, res, next) => {
   res.render('layout', {
-    contentPage: './login/index'
+    contentPage: './login/signIn'
   });
 });
 
-router.post('/login', userController.loginUser);
+router.get('/login/sign-up', (req, res, next) => {
+  res.render('layout', {
+    contentPage: './login/signUp'
+  });
+});
+
+router.post('/login', userController.signIn);
 
 router.get('/user', userController.getUser);
 
-
-
-router.get('/school', (req, res, next) => {
-  res.render('layout', {
-    contentPage: './school/index'
-  });
-})
+router.post('/login/sign-up', userController.signUp)
 
 module.exports = router;
