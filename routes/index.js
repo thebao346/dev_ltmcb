@@ -15,6 +15,12 @@ router.get('/home', (req, res, next) => {
   });
 });
 
+router.get('/class', (req, res, next) => {
+  res.render('layout', {
+    contentPage: './class/class'
+  });
+});
+
 router.get('/classes', (req, res, next) => {
   res.render('layout', {
     contentPage: './classes/index'
